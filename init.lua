@@ -49,7 +49,7 @@ end
 local Implementations = LoadFromUrl("Implementations")
 local Reader = LoadFromUrl("Reader")
 local Strings = LoadFromUrl("Strings")
-local Luau = LoadFromUrl("Luau")
+local Luau, VanillaLuau = LoadFromUrl("Luau")
 
 local function LoadFlag(name)
 	local success, result = pcall(function()
@@ -78,7 +78,7 @@ local padLeft = Implementations.padLeft
 local padRight = Implementations.padRight
 local isGlobal = Implementations.isGlobal
 
-local function Decompile(bytecode, options)
+local function Decompile(bytecode, options, isRoblox)
 	local bytecodeVersion, typeEncodingVersion
 
 	Reader:Set(options.ReaderFloatPrecision)
