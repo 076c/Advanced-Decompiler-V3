@@ -80,6 +80,7 @@ local isGlobal = Implementations.isGlobal
 
 local function Decompile(bytecode, options, isRoblox)
 	local bytecodeVersion, typeEncodingVersion
+	isRoblox = isRoblox or game ~= nil
 
 	Reader:Set(options.ReaderFloatPrecision)
 
